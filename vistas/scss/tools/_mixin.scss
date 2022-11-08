@@ -1,0 +1,31 @@
+@mixin flexDirection($dir) {
+    display: flex;
+    flex-direction: $dir;
+}
+
+@mixin flexCenter($dir) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: $dir;
+}
+
+@mixin ceroMarginPad {
+    margin: 0;
+    padding: 0;
+}
+
+@mixin flexCenterDirection($dir) {
+    display: flex;
+    align-items: center;
+    justify-content: $dir;
+}
+
+$fntWeight: (
+    "extradelgada": 200,
+    "delgada": 300,
+    "regular": 400,
+    "media": 500,
+    "semibold": 600,
+    "negrita": 700
+);

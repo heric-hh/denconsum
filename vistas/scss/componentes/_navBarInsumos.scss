@@ -1,0 +1,58 @@
+@use '../var/colores' as c;
+@use '../tools/mixin' as t;
+@use '../var/fuentes' as f;
+
+
+
+.navbar-insumos {
+    background: c.$bgNavBarInsumos;
+    border-radius: 10px;
+    min-height: 4rem;
+    width: 70%;
+    @include t.flexCenterDirection(center);
+
+    &-nav {
+        display: flex; 
+        list-style: none;
+        @include t.ceroMarginPad;
+
+        .nav-ins-item {
+            border-radius: 10px;
+            cursor: pointer;
+            padding: 1rem 0;
+
+
+           .nav-ins-link {
+                display: flex;
+                align-items: center;
+                margin: 0;
+                padding: 0 6rem;
+                color: black;
+
+
+                .span-link {
+                    font-family: f.$fntNavBar;
+                    font-weight: map-get(t.$fntWeight, negrita);
+                    font-size: 1.3rem;
+                    padding: 0 0.8rem;
+                }
+           }
+        }
+
+        .nav-ins-item:hover {
+            background: rgb(89,217,170);
+            background: c.$bgNavBarInsumos_Hover;
+
+
+            .nav-ins-link {
+                img {
+                    filter: invert(100%) sepia(1%) saturate(163%) hue-rotate(286deg) brightness(118%) contrast(100%);
+                }
+
+                .span-link {
+                    color: black;
+                }
+            }
+        }
+    }
+ }

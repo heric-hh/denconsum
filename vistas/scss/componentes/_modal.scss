@@ -1,0 +1,125 @@
+@use '../var/colores' as c;
+@use '../tools/mixin' as t;
+@use '../var/fuentes' as f;
+
+.modal-container {
+    background: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+.modal-container.mostrar {
+    visibility: visible;
+}
+
+.vista-gral.mostrar {
+    visibility: visible;
+}
+
+.vista-gral {
+    border-radius: 10px;
+    background: #FFF;
+    display: flex;
+    position: absolute;
+    top: 10%;
+    left: 9%;
+    width: 84%;
+    height: 80vh;
+    margin-left: 2rem;
+    visibility: hidden;
+
+    .insumo-info {
+        width: 50%;
+
+        h2 {
+            margin-left: 2.5rem;
+            font-size: 1.8vw;
+            margin-bottom: 2rem;
+        }
+
+        span {
+            font-weight: 700;
+            font-size: 1.3vw;
+            margin-left: 3rem;
+        }
+
+        p {
+            margin-left: 3rem;
+        }
+
+        #btn-cerrar-vista-gral {
+            background: firebrick;
+            color: white;
+            position: absolute;
+            left: 20%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+            padding: 1rem 2rem;
+        }
+    }
+
+    .existencias-vista-gral {
+        background: #ECF7F9;
+        width: 50%;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        @include t.flexCenter(row);
+
+        .tabla-vista-gral {
+            width: 80%;
+            height: 70%;
+        }
+    }
+}
+
+//Modal para eliminar insumos
+.modal-eliminar {
+    background: #FFF;
+    border-radius: 10px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    width: 83%;
+    height: 70vh;
+    position: absolute;
+    left: 8%;
+    top: 12%;
+    visibility: hidden;
+    padding: 4rem;
+
+    h3 {
+        font-size: 2.5rem;
+        color: c.$bgBtn_Eliminar;
+        margin: 0;
+    }
+
+    p {
+        font-size: 1.3vw;
+        font-weight: map-get(t.$fntWeight, media);
+    }
+
+    p, .table-container, .btn-container {
+       @include t.flexCenter(row);
+    }
+
+    .btn-container {
+        gap: 3rem;
+        margin-top: 3rem;
+
+        .btn-cancelar {
+            background: c.$bgBtn_Cancelar;
+            padding: 1rem 2rem;
+        }
+
+        #btn-confirmar-eliminar-usuario {
+            background: c.$bgBtn_Eliminar;
+            padding: 1rem 2rem;
+
+        }
+    }
+}
+
+.modal-eliminar.mostrar {
+    visibility: visible;
+}

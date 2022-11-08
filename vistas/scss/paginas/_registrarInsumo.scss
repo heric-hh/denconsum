@@ -1,0 +1,35 @@
+@use '../var/colores' as c;
+@use '../tools/mixin' as t;
+@use '../var/fuentes' as f;
+
+
+.titulos-cr-up {
+    font-size: 2.5rem;
+    margin: 3rem 3rem 0 3rem;
+}
+
+
+.forms-contenedor {
+    @include t.flexDirection(row);
+    justify-content: space-around;
+    font-size: 1.6rem;
+
+    label {
+        font-size: 1.7rem;
+        font-weight: map-get(t.$fntWeight,  media);
+        margin: 1rem 0;
+    }
+
+    input {
+        border: c.$bordeInputs;
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        padding: 1rem;
+    }
+
+    select {
+        margin-bottom: 1rem;
+    }
+}
+
+

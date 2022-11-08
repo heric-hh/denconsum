@@ -1,0 +1,28 @@
+@use '../var/colores' as c;
+@use '../tools/mixin' as t;
+@use '../var/fuentes' as f;
+
+.tabla-usuarios-seccion {
+    border-radius: 10px;
+    @include t.flexCenter(column);
+    padding: 3rem;
+    margin-top: 3rem;
+}
+
+
+.agregar-usuario-area {
+    width: 18%;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    margin-right: 72%;
+
+    #btn-agregar-usuario {
+        padding: 1.5rem;
+        @include t.flexCenter(row);
+        
+    }
+}
+
+.usuarios-tabla {
+    width: 90%;
+}

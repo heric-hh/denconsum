@@ -1,0 +1,25 @@
+@use '../var/colores' as c;
+@use '../tools/mixin' as t;
+
+
+header {
+    color: c.$fntCol_Titulo;
+    @include t.flexCenterDirection(space-between);
+    min-height: 10vh;
+    margin-left: 7rem;
+    padding: 0 4rem;
+
+    h1 {
+        @include t.ceroMarginPad;
+        font-size: 3rem;
+    }
+
+    .fecha-header {
+        font-size: 2rem;
+    }
+}
+
+main {
+    margin-left: 7rem;
+    padding: 0 4rem;
+}

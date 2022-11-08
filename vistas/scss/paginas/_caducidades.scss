@@ -1,0 +1,18 @@
+@use '../var/colores' as c;
+@use '../tools/mixin' as t;
+@use '../var/fuentes' as f;
+
+
+.semaforo-caducidades {
+    @include t.flexCenter(row);
+
+    div {
+        display: flex;
+        align-items: center;
+
+        .span-cad {
+            font-size: 1vw;
+            padding: 0 1rem;
+        }
+    }
+}

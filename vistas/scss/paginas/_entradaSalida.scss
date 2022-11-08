@@ -1,0 +1,66 @@
+@use '../var/colores' as c;
+@use '../tools/mixin' as t;
+@use '../var/fuentes' as f;
+
+
+.entrada-salida-area {
+    border-radius: 10px;
+    @include t.flexDirection(row);
+    margin: 3rem 0;
+
+    .btns-entradas {
+        @include t.flexDirection(column);
+        gap: 2rem;
+        width: 18%;
+        margin-right: 1.5rem;
+        #btn-nueva-entrada, #btn-nueva-salida {
+            padding: 1rem;
+        }
+    }
+}
+
+.entrada-salida-busqueda-form {
+    border-radius: 10px;
+    padding: 1rem 3rem;
+    width: 75%;
+    margin-left: 1rem;
+    box-shadow: c.$boxShadowContainers;
+
+
+    h2 {
+        font-size: 2.5rem;
+        margin: 1rem 3rem;
+    }
+
+    .buscar-area {
+        width: 50%;
+        margin-top: 0.5rem;
+        margin-left: 3rem;
+
+        label {
+            font-size: 1.6rem;
+            margin-top: 1rem;
+        }
+    }
+}
+
+.entrada-salida-form {
+    @include t.flexDirection(row);
+
+    label {
+        font-size: 1.8rem;
+        margin: 0.5rem 0;
+    }
+
+    input {
+        border: 1px solid rgba(0, 0, 0, 0.2);
+        border-radius: 10px;
+        margin-bottom: 2rem;
+        padding: 1rem;
+    }
+
+    #btn-guardar-entrada {
+        padding: 1rem;
+        margin-top: 3rem;
+    }
+}

@@ -1,0 +1,125 @@
+@use '../var/colores' as c;
+@use '../var/fuentes' as f;
+@use '../tools/mixin' as t;
+
+
+
+nav {
+    font-family: f.$fntNavBar;
+}
+
+
+.barra-lateral {
+    font-size: 2rem;
+    font-weight: map-get(t.$fntWeight , delgada);
+    background: c.$bgNavBar;
+    width: 7rem;
+    min-height: 100vh;
+    position: fixed;
+    transition: all 0.3s ease;
+
+    .perfil-contenedor {
+        @include t.flexCenter(row);
+        background: c.$bgNavBar_Header;
+        justify-content: space-around;
+        height: 8rem;
+        padding: 1rem 0;
+
+        .perfil-imagen {
+            margin: 1rem;
+            display: none;
+        }
+
+        .usuario-rol {
+            @include t.flexCenter(column);
+            align-items: flex-start;
+            gap: 0.3rem;
+            display: none;
+
+            .saludo {
+                color: c.$fntColNavBar_Saludo;
+                font-size: 1.4rem;
+            }
+    
+            .nombre {
+                color: c.$fntColNavBar_Nombre;
+                font-weight: map-get(t.$fntWeight, negrita);
+    
+            }
+    
+            .rol {
+                font-size: 1.2rem;
+                color: c.$fntColNavBar_Rol;
+                font-weight: map-get(t.$fntWeight, delgada);
+            }
+        }
+    }
+}
+
+.desplegar-barra-lateral {
+    @include t.flexCenter(row);
+    margin: 0 1.5rem;
+}
+
+.nav-lista {
+    list-style: none;
+    @include t.ceroMarginPad;
+    @include t.flexCenter(column);
+
+    .nav-item {
+        width: 90%;
+        margin: 1.2rem;
+
+        .nav-link {
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            color: c.$fntColNavBar_Saludo;
+            padding: 1.5rem;
+            text-decoration: none;
+            transition: all 400ms ease;
+
+            img {
+                height: 3rem;
+                border-radius: 10px;
+                margin-left: .2rem;
+            }
+
+            .nombre-link {
+                display: none;
+                margin-left: 2rem;
+
+                &.mostrar {
+                    display: block;
+                }
+            }
+        }
+
+        .nav-link:hover {
+            color: c.$bgNavBarHover;
+            font-weight: map-get(t.$fntWeight, negrita);
+            background: c.$bgNavBarHover;
+
+            img {
+                filter: invert(95%) sepia(63%) saturate(7355%) hue-rotate(253deg) brightness(108%) contrast(100%);
+            }
+        }
+    }
+
+    .nav-item:last-child {
+        margin-top: 18rem;
+
+        .nav-link:hover {
+            background: red;
+        }
+    }
+}
+
+/* PARA MOSTRAR LA BARRA LATERAL */
+.barra-lateral.mostrar {
+    width: 24rem;
+
+    .perfil-imagen, .usuario-rol {
+        display: block;
+    }
+}

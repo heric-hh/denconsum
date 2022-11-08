@@ -1,0 +1,30 @@
+@use '../var/colores' as c;
+
+button {
+    border: none;
+    border-radius: 10px;
+    color: #FAFAFE;
+    cursor: pointer;
+    padding: .8rem;
+    font-size: 1.6rem;
+}
+
+
+.confirmar {
+    background: c.$Verde;
+}
+
+.editar {
+    background: c.$bgBtn_Editar;
+}
+
+.eliminar {
+    background: c.$bgBtn_Eliminar;
+}
+
+.cancelar {
+    background: c.$bgBtn_Cancelar;
+}
+
+
+

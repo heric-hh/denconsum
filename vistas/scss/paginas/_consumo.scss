@@ -1,0 +1,45 @@
+@use '../var/colores' as c;
+@use '../tools/mixin' as t;
+@use '../var/fuentes' as f;
+
+.main-consumo {
+    display: flex;
+
+    .seccion-buscar {
+        width: 35%;
+
+        h3 {
+            color: c.$fntCol_Texto2;
+            font-size: 2.2rem;
+            font-weight: map-get(t.$fntWeight , media);
+        }
+
+        input {
+            width: 70%;
+        }
+    }
+
+    // Seccion para la tabla
+
+    .seccion-tabla {
+        border-radius: 10px;
+        border-collapse: collapse;
+        box-shadow: 0 5px 10px lightgray;
+        background: #FFF;
+        font-family: f.$fntNavBar;
+        text-align: left;
+        overflow: hidden;
+        margin: 3rem;
+        width: 90%;
+
+        tr:nth-child(even) {
+            background: c.$bgTabla_Even;
+        }
+    }
+    
+    button {
+        width: 20%;
+        margin: 3rem;
+    }
+}
+

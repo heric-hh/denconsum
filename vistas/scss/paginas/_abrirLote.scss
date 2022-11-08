@@ -1,0 +1,53 @@
+@use '../var/colores' as c;
+@use '../tools/mixin' as t;
+@use '../var/fuentes' as f;
+
+
+.abrir-lote-contenedor {
+    @include t.flexDirection(row);
+    margin: 3rem 0;
+
+    .buscar-area {
+        margin-right: 1.5rem;
+        
+        label {
+            font-size: 2.1rem;
+            font-weight: map-get(t.$fntWeight, media);
+            padding: 1rem 0;
+        }
+    }
+
+    .abrir-lote-form-titulo {
+        border-radius: 10px;
+        box-shadow: c.$boxShadowContainers;
+        width: 75%;
+
+        h2 {
+            font-size: 2.5rem;
+            margin: 2rem 0 0 0;
+            padding: 0 3rem;
+        }
+
+        .abrir-lote-form {
+            @include t.flexDirection(row);
+
+            label {
+                font-size: 1.8rem;
+                margin: 0.5rem 0;
+            }
+        
+            input, select {
+                border: 1px solid rgba(0, 0, 0, 0.2);
+                border-radius: 10px;
+                font-size: 1.6rem;
+                margin-bottom: 2rem;
+                padding: 1rem;
+            }
+
+            #btn-confirmar-abrir-lote {
+                padding: 1rem;
+                margin-top: 3rem;
+            }
+        }
+    }
+}

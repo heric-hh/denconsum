@@ -1,0 +1,36 @@
+@use '../var/colores' as c;
+@use '../tools/mixin' as t;
+@use '../var/fuentes' as f;
+
+.agregar-usuario-seccion {
+    border-radius: 10px;
+
+    h2 {
+        font-size: 2.5rem;
+        margin: 0;
+        padding: 2rem 3rem;
+        font-weight: map-get(t.$fntWeight,  negrita);
+    }
+
+    .agregar-usuario-form {
+        @include t.flexDirection(row);
+
+        label {
+            font-size: 1.8rem;
+            margin: 0.5rem 0;
+        }
+    
+        input, select {
+            border: c.$bordeInputs;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            font-size: 1.6rem;
+        }
+
+        #btn-guardar-agregar-usuario {
+            padding: 1rem;
+            margin-top: 3rem;
+        }
+    }
+}

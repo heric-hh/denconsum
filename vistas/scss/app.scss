@@ -1,0 +1,48 @@
+@forward 'componentes/global';
+@forward 'componentes/botones';
+@forward 'componentes/forms';
+@forward 'componentes/modal';
+
+// Login 
+@use 'paginas/login';
+
+// Header - Main
+@use 'componentes/header';
+
+// NavBar
+@use 'componentes/navBar';
+
+// NavBar Insumos
+@use 'componentes/navBarInsumos';
+
+
+
+
+//Home
+@use 'paginas/home';
+
+
+
+// Consumo
+@use 'paginas/consumo';
+
+
+
+// Inventario 
+@use 'paginas/inventario';
+@use 'paginas/registrarInsumo';
+
+// Entrada-Salida
+@use 'paginas/entradaSalida';
+
+// Abrir Lote
+@use 'paginas/abrirLote';
+
+// Caducidades
+@use 'paginas/caducidades';
+
+
+// Usuarios
+
+@use 'paginas/usuarios';
+@use 'paginas/agregarUsuario';
